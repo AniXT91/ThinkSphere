@@ -6,21 +6,28 @@
         and connect with fellow writers who believe in the power of storytelling.
     </p>
 </div>
+
 <img src="/img/a.webp" alt="" class="hero-image" style="width: 100%; height: auto; display: block; margin: 30px auto;">
 
 <section class="articles">
-    <h2 class="articles__heading">Latest Posts</h2>
+    
+  <h2 class="articles__heading">Latest Posts</h2>
   
-    <ul class="article-ul">
-     <li>
-          <a href="#">
-            <span>Post Title</span>
-            <span class="article-list__date">Date</span>
+    <ul class="article-ul">       
+
+      <% data.forEach(post => { %>
+
+        <li>
+          <a href="/post/<%=post._id %>">
+            <span><%= post.title %></span>
+            <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
           </a>
-     </li>
+        </li>
+
+    <% }) %>
+     
     </ul>
   
     <a href="" class="pagination">&lt; View Older Posts</a>
-  
-  
-  </section>
+    
+</section>
