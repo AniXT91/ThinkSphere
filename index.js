@@ -5,6 +5,7 @@ const expressLayout = require("express-ejs-layouts")
 
 const connectDB = require("./server/config/connect")
 const route  = require('./server/routes/main');
+const adminRoute = require('./server/routes/admin.js');
 
 const app  = express(); 
 
@@ -25,6 +26,7 @@ app.set('view engine','ejs')
 
 //Routes
 app.use('/',route)
+app.use('/',adminRoute)
 
 
 app.listen(PORT,()=>{
